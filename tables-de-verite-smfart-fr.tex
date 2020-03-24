@@ -1,0 +1,305 @@
+% Created 2020-03-22 dim. 11:55
+% Intended LaTeX compiler: pdflatex
+\documentclass[article,reqno,times,12pt,french]{smfart}
+\usepackage[square,numbers]{natbib}
+                \usepackage[french]{babel}
+                \usepackage{smfenum}
+                 \usepackage{smfthm}
+                  \usepackage[square,numbers]{natbib}
+\usepackage[utf8]{inputenc}
+\usepackage{siunitx}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+%\usepackage{etex}
+\usepackage{xcolor}
+\usepackage[normalem]{ulem}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{smfthm}
+\usepackage{qtree}
+\usepackage{bussproofs}
+\usepackage{proof}
+\usepackage{cancel}
+\usepackage{url}
+\usepackage{pdflscape}
+\usepackage{fontawesome}
+\usepackage{tikz}
+\usepackage[linktocpage,pdfstartview=FitH,colorlinks,linkcolor=blue,anchorcolor=blue,citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue]{hyperref}
+ \usepackage{hyperref}
+\hypersetup{colorlinks=true, breaklinks=true, citecolor=blue, linkcolor=blue, menucolor=blue, urlcolor=blue} 
+               \author{Joseph Vidal-Rosset}
+	       \address{Universit\'e de Lorraine, D\'epartement de philosophie,} 
+                \address{Archives Poincar\'e, UMR 7117 du CNRS,}
+                 \address{ 91 bd Lib\'eration, 54000 Nancy, France.}
+               \email{joseph.vidal-rosset@univ-lorraine.fr}
+
+%\usepackage{scripttab}
+\date{\today}
+\title{La méthode des tables de vérité}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Syntaxe de la logique propositionnelle classique}
+\label{sec:org2c4fe97}
+\subsection{Connecteurs propositionnels}
+\label{sec:org765e617}
+\begin{itemize}
+\item La \emph{négation},  la \emph{conjonction},  la \emph{disjonction},  le \emph{conditionnel}  et le
+\emph{biconditionnel} sont les connecteurs usuels  du calcul propositionnel. On les
+représente respectivement par les symboles suivants:
+\end{itemize}
+\[
+\lnot, \land, \lor, \to, \leftrightarrow
+\]
+Ces symboles  sont appelés \og symboles de  connecteurs propositionnels\fg{},
+parce qu'ils  sont les liens entre  formules \og atomiques\fg{} (c'est-à-dire
+les variables propositionnelles) et  permettent ainsi la formation des
+formules \og moléculaires\fg{},  dont parmi celles-ci, les  \emph{théorèmes} de la
+logique propositionnelle classique. 
+\subsection{Variables propositionnelles}
+\label{sec:orge4e8216}
+Les variables propositionnelles  que l'on note par les formules
+      \[
+       A, B, C, D, \dots
+      \]
+symbolisent   n'importe  quel   énoncé   que   l'on  considère   comme
+\emph{indivisible} et, par conséquent, dénué de connecteur propositionnel.   
+\begin{exem}
+\og La neige  est blanche\fg{} est  un énoncé  du langage ordinaire  que l'on
+peut considérer comme atomique car il ne comporte aucun terme que l'on
+peut   traduire   formellement   par    un   symbole   de   connecteur
+propositionnel. 
+\end{exem}
+\subsection{Constantes du Vrai et du Faux}
+\label{sec:orgbaa765a}
+Il  existe  des  énoncés  qui sont  logiquement  \emph{toujours  vrais}  et
+d'autres qui  sont toujours  faux.  La  négation d'un  énoncé toujours
+vrai est un énoncé toujours  faux et, réciproquement, la négation d'un
+énoncé toujours faux est un énoncé toujours vrai.
+
+\begin{exem}
+\og Si Socrate est un philosophe, alors Socrate est un philosophe\fg{} est un
+énoncé toujours  vrai \emph{en raison de sa forme}: car il reste vrai si  l'on remplace
+\og Socrate est un  philosophe\fg{} par un énoncé faux ou  même par un énoncé
+dont  on   ignore  la  signification   ou  encore  par   une  variable
+propositionnelle: \og Si \#, alors \#\fg{} et \og \(A \to A\)\fg{} sont formellement ou
+logiquement toujours vrais.
+\end{exem}
+
+\begin{exem}
+\og L'eau est  un liquide et  l'eau n'est pas  un liquide\fg{} est  un énoncé
+logiquement contradictoire, comme toute  conjonction d'un énoncé et de
+la  négation  de  ce  même  énoncé:   \(\lnot  A  \land  A\)  est  une
+contradiction et à ce titre est toujours faux. 
+\end{exem}
+
+On symbolise par 
+\[
+\top
+\] 
+un  énoncé qui  est  toujours  faux et  l'on  appelle  ce symbole  \og la
+constante du vrai\fg{}.
+
+On symbolise par 
+\[
+\bot
+\]
+un  énoncé qui  est  toujours  faux et  l'on  appelle  ce symbole  \og la
+constante du faux\fg{}.
+
+\begin{rema}
+On  peut remplacer  \(\top\) par  n'importe quelle  formule \emph{F} qui  peut
+faire l'objet  d'une preuve en  logique classique qui montre  que \emph{F}
+est  vraie.  De même, on  peut  remplacer  \(\bot\) par  n'importe  quelle
+formule \emph{G}  qui peut faire l'objet  d'une preuve qui montre  que \emph{G}
+est une contradiction logique. 
+\end{rema}
+
+\subsection{Expressions bien formée ou \og formules\fg{}}
+\label{sec:orgd85867a}
+\begin{defi}
+On  appelle \og formule\fg{}  une  expression bien  formée, c'est-à-dire  une
+expression en conformité avec la syntaxe du calcul propositionnel. 
+\end{defi}
+\begin{defi}
+[Formule].
+
+\begin{enumerate}
+\item Une  variable propositionnelle est une formule.
+\item Si \emph{A} est une formule, alors \(\lnot A\) l'est aussi.
+\item Si \emph{A}  et si \emph{B} sont  des formules, alors \[(A \land  B), (A \lor
+   B), (A \to B), (A \leftrightarrow B)\] sont aussi des formules.
+\item Rien d'autre n'est une formule.
+\end{enumerate}
+\end{defi}
+\section{Sémantique du calcul propositionnel classique}
+\label{sec:orgae6fb7a}
+\begin{defi}
+[Interprétation des formules] L'interprétation classique d'une formule
+\emph{F} de la logique propositionnelle se  fait à partir de fonctions (les
+valuations) qui associent, à  chaque variable propositionnelle de \emph{F},
+l'une des deux valeurs de vérité de ce calcul: le \emph{vrai} ou le \emph{faux}.  
+\end{defi}
+\begin{defi}
+[Satisfiabilité]  On  dit qu'une  formule  \emph{F}  est \og satisfiable\fg{}  (ou
+\og cohérente\fg{} ou encore \og consistante\fg{}) si  et seulement si \emph{F} est vraie
+pour au moins une de ses inteprétations \emph{I}, ce qui se note:
+\begin{equation}
+\label{eq:1}
+I \models F
+\end{equation}
+\end{defi}
+\begin{defi}
+[Validité] 
+On dit qu'une  formule est \emph{valide} ou \emph{tautologique}  si et seulement
+si elle est vraie pour \emph{toutes} ses interprétations, ce qui s'écrit: 
+\begin{equation}
+\label{eq:2}
+\emptyset \models F
+\end{equation}
+\begin{equation}
+\label{eq:3}
+\top \models F
+\end{equation}
+ou encore tout simplement
+\begin{equation}
+\label{eq:4}
+\models F
+\end{equation}
+\end{defi}
+\begin{defi}
+[Insatisfiabilité] 
+On  dit  qu'une formule  est  \og insatifiable\fg{}  (ou \og contradictoire\fg{}  ou
+\og incohérente\fg{})  si et  seulement si  elle est  fausse pour  toutes ses
+interprétations, ce qui se symbolise de la façon suivante:
+\begin{equation}
+\label{eq:5}
+F \models \bot
+\end{equation}
+ou encore 
+\begin{equation}
+\label{eq:6}
+F \models 
+\end{equation}
+puisque   la  contradiction   n'a  par   définition  \emph{aucun   modèle},
+ce qui signifie qu'aucune inteprétation n'est susceptible de la rendre
+vraie.  D'autre  part,  seule  une  formule  qui  est  contradictoire,
+c'est-à-dire toujours fausse peut impliquer  ce qui est toujours faux.
+La formule  \eqref{eq:5} peut aussi s'exprimer  par l'implication \(\bot
+\Rightarrow \bot\) qui est  évidemment valide c'est-à-dire équivalente
+à \(\top\).  
+\end{defi}
+\begin{rema}
+\begin{itemize}
+\item Si l'on  prouve que \emph{F}  est une  formule \emph{valide}, alors  on prouve
+\eqref{eq:2}, ainsi  que \eqref{eq:3} et  \eqref{eq:4} qui disent  la même
+chose.
+\item Si  l'on prouve  que  \emph{F}  est une  contradiction,  alors on  prouve
+\eqref{eq:5} ainsi que \eqref{eq:6} qui dit la même chose.
+\end{itemize}
+\end{rema}
+\section{L'algorithme des tables de vérité}
+\label{sec:org28fc6a1}
+L'algorithme des tables de vérité est la méthode sémantique de base du
+calcul propositionnel classique. Celle-ci est  fondée sur le fait que,
+dans une  théorie qui  admet le  \emph{principe de  bivalence}, c'est-à-dire
+l'idée que  tout énoncé est vrai  ou faux indépendamment de  la preuve
+que l'on peut en donner, alors  si l'on formalise un énoncé quelconque
+dans une  formule \emph{F} du  calcul propositionnel, \emph{F}  recoit \(2^{n}\)
+interprétations  ou  valuations,  \emph{n}  étant le  nombre  de  variables
+propositionnelles dans \emph{F}, le nombre d'\emph{atomes}  dans \emph{F}. Si \emph{n = 1},
+c'est-à-dire si \emph{F} est atomique,  alors le nombre des interprétations
+possibles de \emph{F}  est \(2^{1}\), c'est-à-dire 2 (le vrai  et le faux).
+S'il \emph{F}  a deux atomes,  le nombre d'inteprétations possibles  de \emph{F}
+est de \(2^{2}\) = 4, trois atomes \(2^{3}\) = 8 inteprétations, etc. 
+\subsection{Table de la négation}
+\label{sec:org96ceec5}
+\begin{center}
+\begin{tabular}{cc}
+\(A\) & \(\lnot A\)\\
+\(\top\) & \(\bot\)\\
+\(\bot\) & \(\top\)\\
+\end{tabular}
+\end{center}
+\subsection{Table de la conjonction}
+\label{sec:orga20bbbe}
+\begin{center}
+\begin{tabular}{ccc}
+\(A\) & \(B\) & \(A \land B\)\\
+\(\top\) & \(\top\) & \(\top\)\\
+\(\top\) & \(\bot\) & \(\bot\)\\
+\(\bot\) & \(\top\) & \(\bot\)\\
+\(\bot\) & \(\bot\) & \(\bot\)\\
+\end{tabular}
+\end{center}
+\subsection{Table de la disjonction}
+\label{sec:orgb95d135}
+\begin{center}
+\begin{tabular}{ccc}
+\(A\) & \(B\) & \(A \lor B\)\\
+\(\top\) & \(\top\) & \(\top\)\\
+\(\top\) & \(\bot\) & \(\top\)\\
+\(\bot\) & \(\top\) & \(\top\)\\
+\(\bot\) & \(\bot\) & \(\bot\)\\
+\end{tabular}
+\end{center}
+\subsection{Table du conditionnel}
+\label{sec:orgb5395ef}
+\begin{center}
+\begin{tabular}{ccc}
+\(A\) & \(B\) & \(A \to B\)\\
+\(\top\) & \(\top\) & \(\top\)\\
+\(\top\) & \(\bot\) & \(\bot\)\\
+\(\bot\) & \(\top\) & \(\top\)\\
+\(\bot\) & \(\bot\) & \(\top\)\\
+\end{tabular}
+\end{center}
+\subsection{Table du biconditionnel}
+\label{sec:orga75602b}
+\begin{center}
+\begin{tabular}{ccc}
+\(A\) & \(B\) & \(A \leftrightarrow B\)\\
+\(\top\) & \(\top\) & \(\top\)\\
+\(\top\) & \(\bot\) & \(\bot\)\\
+\(\bot\) & \(\top\) & \(\bot\)\\
+\(\bot\) & \(\bot\) & \(\top\)\\
+\end{tabular}
+\end{center}
+
+\begin{exem}
+On teste la formule suivante
+\begin{equation}
+\label{eq:7}
+((A \lor B) \to C) \leftrightarrow ((A \to C) \land (B \to C))
+\end{equation}
+avec le constructeur  automatique de tables de vérité qui  se trouve à
+cette adresse: 
+\url{https://mrieppel.net/prog/truthtable.html} 
+Dans la syntaxe de ce prouveur \eqref{eq:7} se traduit par:
+
+\begin{verbatim}
+((A v B) > C) <> ((A > C) & (B > C))
+\end{verbatim}
+\end{exem}
+
+%NOTE: requires \usepackage{color}
+\begin{tabular}{@{ }c@{ }@{ }c@{ }@{ }c | c@{ }@{}c@{}@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{}c@{}@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{}c@{}@{ }c}
+A & B & C &  & ( & ( & A & $\lor$ & B & ) & $\rightarrow$ & C & ) & $\leftrightarrow$ & ( & ( & A & $\rightarrow$ & C & ) & $\land$ & ( & B & $\rightarrow$ & C & ) & ) & \\
+\hline 
+$\top$ & $\top$ & $\top$ &  &  &  & $\top$ & $\top$ & $\top$ &  & $\top$ & $\top$ &  & \textcolor{red}{$\top$} &  &  & $\top$ & $\top$ & $\top$ &  & $\top$ &  & $\top$ & $\top$ & $\top$ &  &  & \\
+$\top$ & $\top$ & $\bot$ &  &  &  & $\top$ & $\top$ & $\top$ &  & $\bot$ & $\bot$ &  & \textcolor{red}{$\top$} &  &  & $\top$ & $\bot$ & $\bot$ &  & $\bot$ &  & $\top$ & $\bot$ & $\bot$ &  &  & \\
+$\top$ & $\bot$ & $\top$ &  &  &  & $\top$ & $\top$ & $\bot$ &  & $\top$ & $\top$ &  & \textcolor{red}{$\top$} &  &  & $\top$ & $\top$ & $\top$ &  & $\top$ &  & $\bot$ & $\top$ & $\top$ &  &  & \\
+$\top$ & $\bot$ & $\bot$ &  &  &  & $\top$ & $\top$ & $\bot$ &  & $\bot$ & $\bot$ &  & \textcolor{red}{$\top$} &  &  & $\top$ & $\bot$ & $\bot$ &  & $\bot$ &  & $\bot$ & $\top$ & $\bot$ &  &  & \\
+$\bot$ & $\top$ & $\top$ &  &  &  & $\bot$ & $\top$ & $\top$ &  & $\top$ & $\top$ &  & \textcolor{red}{$\top$} &  &  & $\bot$ & $\top$ & $\top$ &  & $\top$ &  & $\top$ & $\top$ & $\top$ &  &  & \\
+$\bot$ & $\top$ & $\bot$ &  &  &  & $\bot$ & $\top$ & $\top$ &  & $\bot$ & $\bot$ &  & \textcolor{red}{$\top$} &  &  & $\bot$ & $\top$ & $\bot$ &  & $\bot$ &  & $\top$ & $\bot$ & $\bot$ &  &  & \\
+$\bot$ & $\bot$ & $\top$ &  &  &  & $\bot$ & $\bot$ & $\bot$ &  & $\top$ & $\top$ &  & \textcolor{red}{$\top$} &  &  & $\bot$ & $\top$ & $\top$ &  & $\top$ &  & $\bot$ & $\top$ & $\top$ &  &  & \\
+$\bot$ & $\bot$ & $\bot$ &  &  &  & $\bot$ & $\bot$ & $\bot$ &  & $\top$ & $\bot$ &  & \textcolor{red}{$\top$} &  &  & $\bot$ & $\top$ & $\bot$ &  & $\top$ &  & $\bot$ & $\top$ & $\bot$ &  &  & \\
+\end{tabular}
+\end{document}
